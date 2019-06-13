@@ -43,28 +43,16 @@ JENKINS CONFIGURATON
 
 - Input new user credentials
 
-- Create a new job as freestyle and give it call it 'compile'
+- Create a new job, name it as you wish and select 'Pipeline'
 
-- In 'Source Code Management' input GitHub repository path
+- On 'Build Triggers' add pool SCM and chedule it to "* * * * *"
 
-- In 'Build Triggers' select the GitHub pooling option and schedule it in crontab format (e.g. '*****')
+- On 'Pipeline', select 'Pipeline script from SCM' and as 'SCM' select 'Git'
 
-- Add a 'Build' step as maven target and input the 'compile' command as goal
+- Input this GitHub repository URL and save the pipeline
 
-- Finally, save the job
+- Now you can try to 'build now'
 
-- Create a new job called 'test' and follow the same GitHub step
-
-- In 'Build Triggers' select building after other projects are built and watch the 'compile' project (only if it is stable)
-
-- Again, in 'Build' section, add a new step but now with the 'test' command
-
-- In the post-build section, publish JUnit test result report to '**/target/surefire-reports/*.xml' and save the job
-
-- Now create the last job and call it 'deploy' and follow the same GitHub steps, but now, in 'Build Triggers' wait for 'test'
-
-- On 'Build' tab execute a shell with the command 'mvn package'
-
-- And it is all for now folks! ;)
+- It is all for now folks! ;)
 
 
