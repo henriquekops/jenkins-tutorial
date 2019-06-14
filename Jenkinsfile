@@ -20,7 +20,11 @@ pipeline
         {
             steps
             {
-                sh 'PYTHONPATH=$(pwd) python /test/test.py'
+                environment {
+                    PYTHONPATH='${env.WORKSPACE}'
+                }
+                echo $PYTHONPATH
+                sh 'python3.6 /test/test.py'
             }
             post
             {
