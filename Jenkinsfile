@@ -24,7 +24,6 @@ pipeline
         {
             steps
             {
-                echo $PYTHONPATH
                 sh 'python /test/test.py'
             }
             post
