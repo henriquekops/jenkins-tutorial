@@ -7,10 +7,6 @@ pipeline
             image 'python:3.6'
         }
     }
-    environment
-    {
-        PYTHONPATH = pwd()
-    }
     stages
     {
         stage('build')
@@ -24,7 +20,7 @@ pipeline
         {
             steps
             {
-                sh 'python /test/test.py'
+                sh 'python src/test.py'
             }
             post
             {

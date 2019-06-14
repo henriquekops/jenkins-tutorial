@@ -1,7 +1,6 @@
 import unittest
 import xmlrunner
-import os, sys, inspect
-from src.resources import app
+from resources import app
 
 class UnitTest(unittest.TestCase):
 
