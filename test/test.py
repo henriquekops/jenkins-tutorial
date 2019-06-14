@@ -1,12 +1,7 @@
 import unittest
 import xmlrunner
 import os, sys, inspect
-
-current_dir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-parent_dir = os.path.dirname(current_dir)
-sys.path.insert(0, parent_dir) 
-
-from server import app
+from src.resources import app
 
 class UnitTest(unittest.TestCase):
 
