@@ -1,6 +1,10 @@
 > Author: Henrique R. Kops
 
-# ENVIRONMENT SETUP
+# Jenkins Tutorial for Python CI!
+
+![](https://wiki.jenkins.io/download/attachments/2916393/master-jenkins.svg)
+
+## ENVIRONMENT SETUP
 
 ### DEPENDENCIES
 
@@ -54,7 +58,7 @@ $ docker exec Jenkins-Tutorial cat /var/...
 ```
 
 
-# JENKINS CONFIGURATON
+## JENKINS CONFIGURATON
 
 - Select the **community useful** installation
 
