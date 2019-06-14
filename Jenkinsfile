@@ -20,7 +20,7 @@ pipeline
         {
             steps
             {
-                sh 'PYTHONPATH$(pwd) python /test/test.py'
+                sh 'PYTHONPATH=$(pwd) python /test/test.py'
             }
             post
             {
