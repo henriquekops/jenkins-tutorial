@@ -9,7 +9,7 @@ pipeline
     }
     environment
     {
-        PYTHONPATH = '${env.WORKSPACE}'
+        PYTHONPATH = pwd()
     }
     stages
     {
