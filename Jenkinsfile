@@ -7,6 +7,10 @@ pipeline
             image 'python:3.6'
         }
     }
+    environment
+    {
+        PYTHONPATH = '${env.WORKSPACE}'
+    }
     stages
     {
         stage('build')
@@ -20,11 +24,8 @@ pipeline
         {
             steps
             {
-                environment {
-                    PYTHONPATH='${env.WORKSPACE}'
-                }
                 echo $PYTHONPATH
-                sh 'python3.6 /test/test.py'
+                sh 'python /test/test.py'
             }
             post
             {
