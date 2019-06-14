@@ -74,7 +74,7 @@ $ docker exec Jenkins-Tutorial cat /var/...
 
 - Now you can try to _build now_
 
-- Thats all folks! :whale: :necktie:
+- Thats all folks! :whale: :necktie: :snake:
 
 
 ## Appendix
