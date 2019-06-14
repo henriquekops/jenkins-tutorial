@@ -27,12 +27,12 @@ $ git clone https://github.com/henriquekops/jenkins_tutorial.git
 $ cd /path/to/cloned/project/jenkins_tutorial/
 ```
 
-3. Create virtual environment:
+3. Create virtual environment (_Optional_):
 ```
 $ virtualenv venv
 ```
 
-4. Activate virtual environment:
+4. Activate virtual environment (_Optional_):
 ```
 $ source ./venv/bin/activate
 ```
@@ -47,7 +47,7 @@ $ pip3 install -r requirements.txt
 $ sudo docker-compose up
 ```
 
-7. Verify containers:
+7. Verify containers (_Optional_):
 ```
 $ docker ps
 ```
