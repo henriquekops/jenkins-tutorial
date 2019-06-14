@@ -1,58 +1,90 @@
-METADATA
-Author: Henrique R. Kops
-Date: 2019-02-06
+> Author: Henrique R. Kops
 
-USEFUL:
-	docker stop <container name>
-	docker rm <container id>
-	docker rmi <image id>
-	docker images
-	docker exec -it <container_name> bash
+# ENVIRONMENT SETUP
 
-ENVIRONMENT SETUP
+### DEPENDENCIES
 
-Step 0 (Get docker-ce):
-- https://docs.docker.com/install/linux/docker-ce/ubuntu/
+Which | How to
+------|-------
+Docker |  [docker-ce](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+Python | `$ sudo apt install python3.6`
+Pip | `$ sudo apt install python3-pip`
+Virtualenv | `$pip3 install virtualenv`
 
-Step 1 (Get python):
-$ sudo apt install python3.6 python3-pip
+### STEPS
 
-Step 2 (Download the project):
-- $git clone https://github.com/henriquekops/jenkins_tutorial.git
+1. Clone the project:
+```
+$ git clone https://github.com/henriquekops/jenkins_tutorial.git
+```
 
-Step 1 (Navigate to project directory):
-- $cd /path/to/cloned/project/jenkins_tutorial/
+2. Navigate to project directory:
+```
+$ cd /path/to/cloned/project/jenkins_tutorial/
+```
 
-Step 2 (Build up the jenkins docker):
-- $sudo docker-compose up
+3. Create virtual environment:
+```
+$ virtualenv venv
+```
 
-Step 3 (List containers):
-- $docker ps
+4. Activate virtual environment:
+```
+$ source ./venv/bin/activate
+```
 
-Step 4 (Get the first access key):
-- $docker exec Jenkins-Tutorial cat /var/...
+5. Install requirements:
+```
+$ pip3 install -r requirements.txt
+```
 
-Step 5 (Activate virtual environment):
-- $source ./venv/bin/activate
+6. (Build up the jenkins docker):
+```
+$ sudo docker-compose up
+```
 
-Step 6 (Install requirements):
+7. Verify containers:
+```
+$ docker ps
+```
 
-JENKINS CONFIGURATON
+8. Get the first access key:
+```
+$ docker exec Jenkins-Tutorial cat /var/...
+```
 
-- Select the 'community useful' installation
+
+# JENKINS CONFIGURATON
+
+- Select the **community useful** installation
 
 - Input new user credentials
 
-- Create a new job, name it as you wish and select 'Pipeline'
+- On `localhost:PORT` append `/blue`
 
-- On 'Build Triggers' add pool SCM and chedule it to "* * * * *"
+- Click on **new pipeline**
 
-- On 'Pipeline', select 'Pipeline script from SCM' and as 'SCM' select 'Git'
+- Select the **GitHub** option
 
-- Input this GitHub repository URL and save the pipeline
+- Input this GitHub _access key_
 
-- Now you can try to 'build now'
+- Say that the project belongs to **henriquekops**
 
-- It is all for now folks! ;)
+- Select **jenkins-tutorial** repository and **create pipeline**
+
+- Now you can try to _build now_
+
+- Thats all folks! :whale: :necktie:
 
 
+## Appendix
+
+#### USEFUL DOCKER COMMANDS:
+Command | Whats for
+--------|----------
+`$ docker ps` | list containers
+`$ docker images` | list images
+`$ docker exec -it <container_name> bash` | execute in container
+`$ docker stop <container name>` | stops container
+`$ docker rm <container id>` | remove container
+`$ docker rmi <image id>` | remove image
