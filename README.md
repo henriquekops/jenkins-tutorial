@@ -72,9 +72,9 @@ $ docker exec Jenkins-Tutorial cat /var/...
 
 - Input this GitHub _access key_
 
-- Say that the project belongs to **henriquekops**
+- Say that the project belongs to **your user name**
 
-- Select **jenkins-tutorial** repository and **create pipeline**
+- Select **your repo** and **create pipeline**
 
 - Now you can try to _build now_
 
